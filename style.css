@@ -370,5 +370,15 @@ footer .external-links a{color:#1a1a1a;text-decoration:none;margin:0 6px}
   height: 100%;
   border: 0;
 }
+@media (max-width: 650px) {
+  .bg-video {
+    display: none;
+  }
+
+  body {
+    background: url("modernwatch.webp"); center / cover no-repeat fixed;
+  }
+}
+
 
 
