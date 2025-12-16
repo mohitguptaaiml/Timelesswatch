@@ -180,4 +180,10 @@ document.addEventListener("click", function () {
   audio.play().catch(() => {});
   audioPlayed = true;
 });
+document.addEventListener("touchstart", () => {
+  const video = document.querySelector(".bg-video");
+  if (video.paused) {
+    video.play().catch(() => {});
+  }
+}, { once: true });
 
