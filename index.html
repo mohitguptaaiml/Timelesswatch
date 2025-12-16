@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Collection - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Video -->
+  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
+    <source src="backgroundvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <audio id="siteAudio" src="background.mp3"></audio>
+
+
+  <!-- Pre-entry modal: asks visitor if they are a collector -->
+  <div id="preloadModal" class="preload-modal" role="dialog" aria-modal="true" aria-labelledby="preloadTitle">
+    <div class="preload-content" role="document">
+      <button id="modalClose" class="close" aria-label="Close dialog">×</button>
+      <h2 id="preloadTitle">Are you a collector?</h2>
+      <p class="modal-subtitle">Discover timepieces beyond imagination</p>
+
+      <div class="modal-actions">
+        <button id="enterSite" class="btn-primary">Enter the realm</button>
+        <button id="skipSite" class="btn-secondary">Not now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <ul id="navMenu" class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="best-picks.html" class="nav-link">Editor's Picks</a></li>
+      <li><a href="luxury.html" class="nav-link">Luxury</a></li>
+      <li><a href="classic.html" class="nav-link">Classic Collection</a></li>
+      <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+      <li><a href="support.html" class="nav-link">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Timeless Watch Collection</h1>
+    <p>Discover elegance, precision, and craftsmanship.</p>
+  </header>
+
+  <!-- Filter Section -->
+  <section class="filters" aria-label="Filters">
+    <h2>Filter Watches</h2>
+    <div class="filter-group" data-group="looks">
+      <strong>Looks:</strong>
+      <button class="filter-btn" data-group="looks" data-value="minimalist">Minimalist</button>
+      <button class="filter-btn" data-group="looks" data-value="sport">Sport</button>
+      <button class="filter-btn" data-group="looks" data-value="dress">Dress</button>
+    </div>
+
+    <div class="filter-group" data-group="brand">
+      <strong>Brand:</strong>
+      <button class="filter-btn" data-group="brand" data-value="helms">Helms</button>
+      <button class="filter-btn" data-group="brand" data-value="aurum">Aurum</button>
+      <button class="filter-btn" data-group="brand" data-value="mariner">Mariner</button>
+    </div>
+
+    <div class="filter-group" data-group="movement">
+      <strong>Movement:</strong>
+      <button class="filter-btn" data-group="movement" data-value="automatic">Automatic</button>
+      <button class="filter-btn" data-group="movement" data-value="quartz">Quartz</button>
+      <button class="filter-btn" data-group="movement" data-value="manual">Manual</button>
+    </div>
+
+    <div class="filter-group" data-group="material">
+      <strong>Material:</strong>
+      <button class="filter-btn" data-group="material" data-value="steel">Steel</button>
+      <button class="filter-btn" data-group="material" data-value="leather">Leather</button>
+      <button class="filter-btn" data-group="material" data-value="gold">Gold</button>
+    </div>
+
+    <div class="filter-group price-range">
+      <strong>Max Price: ₹<span id="priceValue">50000</span></strong>
+      <input id="priceRange" type="range" min="5000" max="200000" step="1000" value="50000">
+    </div>
+  </section>
+
+  <!-- Watch Grid -->
+  <section class="watch-grid" id="watchGrid">
+    <div class="watch-card" data-id="modern-steel" data-price="45000" data-looks="minimalist" data-brand="helms" data-movement="automatic" data-material="steel">
+      <a href="https://unsplash.com/s/photos/modern-watch" target="_blank" rel="noopener">
+        <img src="https://content.rolex.com/dam/2022/upright-bba-with-shadow/m124300-0001.png" alt="Modern Steel">
+      </a>
+      <h3>Modern Steel</h3>
+      <p class="muted">Minimalist — Helms</p>
+      <p class="quote">"Understated lines, obvious presence."</p>
+      <a class="order-link" href="order.html?id=modern-steel">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="vintage-leather" data-price="32000" data-looks="dress" data-brand="aurum" data-movement="manual" data-material="leather">
+      <a href="https://unsplash.com/s/photos/vintage-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/6rrn4HwKkQwcJPHPsXd34qlRpbKMqvQrSkYT8m7Y4Mw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/d2F0Y2hnZWNrby5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvd2F0/Y2gtc3RyYXBzLXNp/bXBsZS1oYW5kbWFk/ZS1pdGFsaWFuLWxl/YXRoZXItd2F0Y2gt/c3RyYXAtY2hvY29s/YXRlLWJyb3duLTM0/Njg2NDg5NzU1ODEx/XzUzM3guanBnP3Y9/MTY2MTk3MTUwMA" alt="Vintage Leather">
+      </a>
+      <h3>Vintage Leather</h3>
+      <p class="muted">Dress — Aurum</p>
+      <p class="quote">"A strap that feels like history."</p>
+      <a class="order-link" href="order.html?id=vintage-leather">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="mariner-sport" data-price="78000" data-looks="sport" data-brand="mariner" data-movement="automatic" data-material="steel">
+      <a href="https://unsplash.com/s/photos/sports-watch" target="_blank" rel="noopener">
+        <img src="https://content.rolex.com/dam/2022/upright-bba-with-shadow/m126610ln-0001.png" alt="Mariner Sport">
+      </a>
+      <h3>Mariner Sport</h3>
+      <p class="muted">Sport — Mariner</p>
+      <p class="quote">"Built to perform beyond expectation."</p>
+      <a class="order-link" href="order.html?id=mariner-sport">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="chrono-gold" data-price="120000" data-looks="dress" data-brand="aurum" data-movement="automatic" data-material="gold">
+      <a href="https://unsplash.com/s/photos/gold-watch" target="_blank" rel="noopener">
+        <img src="https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116508-0013.png" alt="Chrono Gold">
+      </a>
+      <h3>Chrono Gold</h3>
+      <p class="muted">Dress — Aurum</p>
+      <p class="quote">"An heirloom for the modern era."</p>
+      <a class="order-link" href="order.html?id=chrono-gold">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="pilot-black" data-price="54000" data-looks="minimalist" data-brand="helms" data-movement="quartz" data-material="steel">
+      <a href="https://unsplash.com/s/photos/pilot-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/4aR5sj5QkSabNma78SExhqyGnwLR4_EImbtDU0Lv9S4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vZHl5emgycHd2/L2ltYWdlL2ZldGNo/L2ZfYXV0by9odHRw/czovL2NkbjExLmJp/Z2NvbW1lcmNlLmNv/bS9zLXV6b253cmhu/MTgvaW1hZ2VzL3N0/ZW5jaWwvNzAweDky/Mi9wcm9kdWN0cy8y/MDAxMC8xMTM4MzQv/SVNMLTMyNl8wMDAw/XzAxX18wOTYwMS4x/NzY0NzAwODgwLmpw/Zz9jPTE" alt="Pilot Black">
+      </a>
+      <h3>Pilot Black</h3>
+      <p class="muted">Minimalist — Helms</p>
+      <p class="quote">"Legible, ready, reliable."</p>
+      <a class="order-link" href="order.html?id=pilot-black">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="midnight-blue" data-price="58000" data-looks="sport" data-brand="mariner" data-movement="automatic" data-material="steel">
+      <a href="https://unsplash.com/s/photos/blue-watch" target="_blank" rel="noopener">
+        <img src="https://imagescdn.thecollective.in/img/app/product/7/704847-7637597.jpg" alt="Midnight Blue">
+      </a>
+      <h3>Midnight Blue</h3>
+      <p class="muted">Sport — Mariner</p>
+      <p class="quote">"Bold blue for the bold soul."</p>
+      <a class="order-link" href="order.html?id=midnight-blue">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="rose-elegance" data-price="72000" data-looks="dress" data-brand="aurum" data-movement="automatic" data-material="rose-gold">
+      <a href="https://unsplash.com/s/photos/rose-gold-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/S0cIGqYPGtB8s62p2SCCWJRacIMYL-u-og31cHehWxw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMubXludGFzc2V0/cy5jb20vZHByXzIs/cV82MCx3XzIxMCxj/X2xpbWl0LGZsX3By/b2dyZXNzaXZlL2Fz/c2V0cy9pbWFnZXMv/MjAyNS9TRVBURU1C/RVIvMjQvZkJIQ2Np/RkJfOWJlMmQzZGUw/NjkzNGEwMWE5N2I5/NTM1NDg3ZjJjMjUu/anBn" alt="Rose Elegance">
+      </a>
+      <h3>Rose Elegance</h3>
+      <p class="muted">Dress — Aurum</p>
+      <p class="quote">"Warmth and sophistication combined."</p>
+      <a class="order-link" href="order.html?id=rose-elegance">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="white-dial" data-price="48000" data-looks="minimalist" data-brand="helms" data-movement="quartz" data-material="steel">
+      <a href="https://unsplash.com/s/photos/white-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/VlWnCeIvB8QRAf9B_qNWhb0fUxy7O6Jl8oN4GevZrPg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/cmVjb21tZW5kYXRp/b24tcmVxdWVzdC1t/aW5pbWFsaXN0LXdo/aXRlLWRpYWwtbGVh/dGhlci1zdHJhcC12/MC01OGlvOTN2NHYz/aWYxLmpwZWc_d2lk/dGg9NjQwJmNyb3A9/c21hcnQmYXV0bz13/ZWJwJnM9OGE5MzRk/YmYxNmUyMzhiODU4/M2JiNTA4OWJiNmQw/MTcyNmI3MDRkMg" alt="White Dial">
+      </a>
+      <h3>White Dial</h3>
+      <p class="muted">Minimalist — Helms</p>
+      <p class="quote">"Clean lines, pure elegance."</p>
+      <a class="order-link" href="order.html?id=white-dial">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="bronze-vintage" data-price="65000" data-looks="vintage" data-brand="seiko" data-movement="manual" data-material="bronze">
+      <a href="https://unsplash.com/s/photos/vintage-bronze-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/8VehxqomzVJNe2i1tR3-7mJD12BhrMzWqw0xPvVDcFk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzU4NDU4ODc4L3Iv/aWwvMjNhY2UyLzcw/Nzg1MTYxNTEvaWxf/MzAweDMwMC43MDc4/NTE2MTUxXzdobzcu/anBn" alt="Bronze Vintage">
+      </a>
+      <h3>Bronze Vintage</h3>
+      <p class="muted">Vintage — Seiko</p>
+      <p class="quote">"Time ages it with character."</p>
+      <a class="order-link" href="order.html?id=bronze-vintage">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="aqua-diver" data-price="84000" data-looks="sport" data-brand="submariner" data-movement="automatic" data-material="steel">
+      <a href="https://unsplash.com/s/photos/aqua-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/SgUE-CLAUTHIchaP-cTV12ThLVjRwn8KTsg8-83q798/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjExN1BFRWVMeUwu/anBn" alt="Aqua Diver">
+      </a>
+      <h3>Aqua Diver</h3>
+      <p class="muted">Sport — Submariner</p>
+      <p class="quote">"Conquer the depths in style."</p>
+      <a class="order-link" href="order.html?id=aqua-diver">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="silver-classic" data-price="51000" data-looks="dress" data-brand="aurum" data-movement="automatic" data-material="silver">
+      <a href="https://unsplash.com/s/photos/silver-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/-V_UydaOARd4F7Wulu7j2Bl9MInnBb17W1x4r_KViyc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy5v/bGl2aWFidXJ0b24u/Y29tL2R3L2ltYWdl/L3YyL0JES1pfUFJE/L29uL2RlbWFuZHdh/cmUuc3RhdGljLy0v/U2l0ZXMtbWdpLW1h/c3Rlci9kZWZhdWx0/L2R3OGYyZGRhM2Uv/aW1hZ2VzL3Byb2R1/Y3RzLzI0MDAwMTYw/XzEuanBnP3N3PTY0/MCZzaD02NDAmcT04/NQ" alt="Silver Classic">
+      </a>
+      <h3>Silver Classic</h3>
+      <p class="muted">Dress — Aurum</p>
+      <p class="quote">"Timeless silver, eternal grace."</p>
+      <a class="order-link" href="order.html?id=silver-classic">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="ebony-sport" data-price="61000" data-looks="sport" data-brand="helms" data-movement="automatic" data-material="steel">
+      <a href="https://unsplash.com/s/photos/black-sport-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/0k2Q5xqYIrMIyofCEseLUvIB6sTaijDqdVIMI2RVKjc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dXdvb2RzaG9wLmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy9JTUdf/MDUwMS5qcGc_dj0x/NTQyOTc4Mzk0Jndp/ZHRoPTE0NDU" alt="Ebony Sport">
+      </a>
+      <h3>Ebony Sport</h3>
+      <p class="muted">Sport — Helms</p>
+      <p class="quote">"Dark, powerful, performance-driven."</p>
+      <a class="order-link" href="order.html?id=ebony-sport">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="jade-minimalist" data-price="55000" data-looks="minimalist" data-brand="aurum" data-movement="quartz" data-material="steel">
+      <a href="https://unsplash.com/s/photos/green-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/ALxbbDFCcELFkFpyvNoHsPsPSuggUrAGwJPJ-NVbqnI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jYWl0/bHlubWluaW1hbGlz/dC5jb20vY2RuL3No/b3AvZmlsZXMvV2F0/Y2gtOTkxNi5qcGc_/dj0xNzU5Nzg1NjM5/JndpZHRoPTM4NDA" alt="Jade Minimalist">
+      </a>
+      <h3>Jade Minimalist</h3>
+      <p class="muted">Minimalist — Aurum</p>
+      <p class="quote">"Green serenity on your wrist."</p>
+      <a class="order-link" href="order.html?id=jade-minimalist">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="amber-dress" data-price="69000" data-looks="dress" data-brand="helms" data-movement="automatic" data-material="leather">
+      <a href="https://unsplash.com/s/photos/brown-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/soAsXEk_U7mncyOgRSWAJ85GpQ_C81Ru1tpJ1tL8jl4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvSGY2OTI1/ZDA4OTBiMjQwMzFh/NTg1MWZhNWI0ZTRm/ZTRiZC5qcGdfMzAw/eDMwMC5qcGc" alt="Amber Dress">
+      </a>
+      <h3>Amber Dress</h3>
+      <p class="muted">Dress — Helms</p>
+      <p class="quote">"Gold finishing, timeless appeal."</p>
+      <a class="order-link" href="order.html?id=amber-dress">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="sapphire-blue" data-price="88000" data-looks="dress" data-brand="rolex" data-movement="automatic" data-material="sapphire">
+      <a href="https://unsplash.com/s/photos/sapphire-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/YqhILO-myAoZIhUgzvH_yNRHL-x-3zcL9nDUb-LbKto/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/am93aXNzYS5jb20v/Y2RuL3Nob3AvZmls/ZXMvajEuODE2Lm1f/Y3Jpbmd2aWV3X21h/Z2ljX3NhcHBoaXJl/X2pvd2lzc2Ffd2F0/Y2guanBnP3Y9MTc1/MDg1NTI5NSZ3aWR0/aD0xNDQ1" alt="Sapphire Blue">
+      </a>
+      <h3>Sapphire Blue</h3>
+      <p class="muted">Dress — Rolex</p>
+      <p class="quote">"Rare gem on rare wrists."</p>
+      <a class="order-link" href="order.html?id=sapphire-blue">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="titanium-ultra" data-price="95000" data-looks="sport" data-brand="mariner" data-movement="automatic" data-material="titanium">
+      <a href="https://unsplash.com/s/photos/titanium-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/GZTsRzITCsegTQJOWcG9bbqLcYDzzNfcn0FMHkJsVr8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2FuZG1hcmMuY29t/L2Nkbi9zaG9wL3By/b2R1Y3RzL0FwcGxl/V2F0Y2hUaXRhbml1/bUJhbmQtU2lsdmVy/LVNBTkRNQVJDMl8x/XzE4MDB4LmpwZz92/PTE2NjYzODAwNzc" alt="Titanium Ultra">
+      </a>
+      <h3>Titanium Ultra</h3>
+      <p class="muted">Sport — Mariner</p>
+      <p class="quote">"Lightweight, unbreakable spirit."</p>
+      <a class="order-link" href="order.html?id=titanium-ultra">Order Now</a>
+    </div>
+
+    <div class="watch-card" data-id="obsidian-night" data-price="62000" data-looks="minimalist" data-brand="helms" data-movement="quartz" data-material="ceramic">
+      <a href="https://unsplash.com/s/photos/black-ceramic-watch" target="_blank" rel="noopener">
+        <img src="https://imgs.search.brave.com/C9l8cHY7ttMY8SHeBLJxuhH0VR8H7wrZ6SXRtCk4wzw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzE3NzkzMjc0L3Iv/aWwvMGUwMzEyLzM1/ODk3MzE5MTkvaWxf/MzQweDI3MC4zNTg5/NzMxOTE5Xzd4NWku/anBn" alt="Obsidian Night">
+      </a>
+      <h3>Obsidian Night</h3>
+      <p class="muted">Minimalist — Helms</p>
+      <p class="quote">"Pure steel, pure classic."</p>
+      <a class="order-link" href="order.html?id=obsidian-night">Order Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <form id="footerContact">
+        <h3>Contact Us</h3>
+        <input name="name" type="text" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div class="external-links">
+        <h4>Explore More</h4>
+        <a href="https://www.hodinkee.com" target="_blank" rel="noopener">Hodinkee</a> |
+        <a href="https://www.watchbox.com" target="_blank" rel="noopener">WatchBox</a> |
+        <a href="https://www.ablogtowatch.com" target="_blank" rel="noopener">A Blog to Watch</a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>Screen Width: <span id="screenWidth"></span> px</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
