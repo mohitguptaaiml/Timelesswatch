@@ -187,20 +187,3 @@ document.addEventListener("touchstart", () => {
   }
 }, { once: true });
 
-let cart = [];
-
-function addToCart(name, price){
-    cart.push({name:name, price:price});
-    updateCart();
-}
-
-function updateCart(){
-    let cartList = document.getElementById("cartItems");
-    cartList.innerHTML = "";
-
-    cart.forEach(item => {
-        let li = document.createElement("li");
-        li.innerText = item.name + " - ₹" + item.price;
-        cartList.appendChild(li);
-    });
-}
